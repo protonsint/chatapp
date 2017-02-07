@@ -44,7 +44,7 @@ function ConnectFunction(){
 	var userNameText=$('#userNameText').val();
 	if(userNameText.length>0){
 		//socket = io.connect('http://localhost:8080');
-		socket = io.connect('/');
+		socket = io.connect(window.location.hostname);
 		
 		socket.on('connect', function(){
 				socket.emit('adduser', userNameText);
